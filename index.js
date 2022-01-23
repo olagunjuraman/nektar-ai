@@ -24,6 +24,7 @@ const server = http.createServer(function (req, res) {
   if (endpoint === "/get-log") {
     const param = requestURL.split('?')[1];
     const query = parseQuery(param);
+     // hour of the day is in 24hr format
     if (!query.date || !query.hourOfDay) {
       res.write('Required query missing. Please ensure the hourOfDay and date is specified')
       res.end();
